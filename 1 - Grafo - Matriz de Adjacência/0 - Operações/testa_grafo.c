@@ -3,7 +3,7 @@
 #include "grafo_matrizadj_inicializa.c"
 #include "grafo_matrizadj_imprime.c"
 #include "grafo_matrizadj_insereAresta.c"
-//#include "grafo_matrizadj_existeAresta.c"
+#include "grafo_matrizadj_existeAresta.c"
 
 int main()
 {
@@ -28,7 +28,7 @@ int main()
 	
 	imprimeGrafoMatrizAdj(&grafo);
 	
-	//existeAresta(&grafo, 1, 2);
+	existeAresta(&grafo, 2, 1);
 	
 	return 0;
 }
