@@ -22,5 +22,5 @@ void imprimeGrafoMatrizAdj(Grafo* grafo)
 			}
 		}
 	}
-	printf("\n");
+	printf("\n\n\n");
 }

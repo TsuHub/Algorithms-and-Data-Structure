@@ -1,22 +1,26 @@
 #include <stdlib.h>
 #include <stdbool.h>
 //#include "grafo_matrizadj_verifValidadeVert.c"
-//#include "grafo_matrizadj_ponderado.c"
-
-bool existeArestaAdj(Grafo* grafo, int v1, int v2)
-{
-	if (!(verificaValidadeVert(grafo, v1) && verificaValidadeVert(grafo, v2))){
-		fprintf(stderr, "ERRO: O índice do vértice deve estar no intervalo de 1 a %d", grafo->numVertices);
-        return false;
-	}
+/*
+	Aparentemente, em C, como o arquivo 'grafo_matrizadj_insereAresta.c'
+	já faz a chamada de grafo_matrizadj_verifValidadeVert.c, este arquivo
+	(grafo_matrizadj_existeAresta.c) não precisa fazê-lo.
+	(se for isso mesmo, não faz sentido algum, já que o arquivo que vai
+	utilizar um módulo, deveria ser capaz de incluir (include/importar)
+	o arquivo que seria utilizado.
 	
-	if (grafo->mat[v1][v2] != AN){
-		printf("Existe aresta entre os vértices %d e %d");
+*/
+
+bool existeAresta(Grafo* grafo, int v1, int v2)
+{
+	if (!(verificaValidadeVertice(grafo, v1) && verificaValidadeVertice(grafo, v2)))
+		return false;
+	
+	if (grafo->mat[v1][v2] != -1){
+		printf("Existe aresta entre os vértices %d e %d\n", v1, v2);
 		return true;
 	}
 	
-	else{
-		printf("Não existe aresta entre os vértices %d e %d");
-		return false;
-	}
+	printf("Não existe aresta entre os vértices %d e %d\n", v1, v2);
+	return false;
 }
