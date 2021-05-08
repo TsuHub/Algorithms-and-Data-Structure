@@ -7,6 +7,7 @@
 #include "grafo_matrizadj_obtemPeso.c"
 #include "grafo_matrizadj_removeAresta.c"
 #include "grafo_matrizadj_listaAdjVazia.c"
+#include "grafo_matrizadj_proxListaAdj.c"
 
 int main()
 {
@@ -40,6 +41,8 @@ int main()
 	imprimeGrafoMatrizAdj(&grafo);
 	
 	listaAdjVazia(&grafo, 2);
+	
+	proxListaAdj(&grafo, 2);
 	
 	return 0;
 }
