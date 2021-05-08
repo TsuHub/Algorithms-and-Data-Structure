@@ -12,7 +12,7 @@ bool inicializaGrafoMatrizAdj(Grafo* grafo, int nv)
         return false;
 	}
 	
-	if (nv <= 0)
+	if (nv < 0)
 	{
 		fprintf(stderr, "ERRO na chamada de inicializaGrfo: Número de vértices\
 						deve ser positivo.\n");
