@@ -10,7 +10,7 @@ bool listaAdjVazia(Grafo* grafo, int vertice)
 	for (i = 0; i < grafo->numVertices; i++)
 	{
 		if (grafo->mat[vertice][i] != AN){
-			printf("O vértice %d possui adjacente(s).\n");
+			printf("O vértice %d possui adjacente(s).\n", vertice);
 			return false;
 		}
 	}
