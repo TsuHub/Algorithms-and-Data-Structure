@@ -2,6 +2,7 @@
 
 #define MAXNUMVERTICES 100
 #define AN -1
+#define VERTICE_INVALIDO -1
 
 typedef int Peso;
 
