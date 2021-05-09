@@ -1,4 +1,4 @@
-//#include <stdbool.h>
+#include <stdbool.h>
 
 #define VERTICE_INVALIDO NULL
 #define AN -1
