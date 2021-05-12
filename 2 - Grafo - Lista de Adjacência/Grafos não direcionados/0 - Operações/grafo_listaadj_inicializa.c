@@ -1,4 +1,3 @@
-///*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -15,6 +14,9 @@ bool inicializaGrafo(Grafo* grafo, int nv)
 								// que o callo c já aloca os atributos de uma
 								// estrutura como sendo zero.
 	
+	// Preciso perguntar a professora como esta comparação funciona, já que
+	// o calloc tem tipo de retorno vazio pelo que eu li. E como o retorno é
+	// void, como que eu usaria esta atribuição no if?
 	if (!(grafo->listaAdj = (Aresta**) calloc(nv, sizeof(Aresta*)))){
 		fprintf(stderr, "ERRO: Falha na alocação de memória na função inicializaGrafo\n");
 		return false;
