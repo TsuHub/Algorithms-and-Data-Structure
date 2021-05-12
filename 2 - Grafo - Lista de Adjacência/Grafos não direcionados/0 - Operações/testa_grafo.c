@@ -16,5 +16,7 @@ int main()
 		scanf("%d", &numVertices);
 	} while(!inicializaGrafo(&grafo, numVertices));
 	
+	insereAresta(&grafo, 1, 3);
+		
 	return 0;
 }
