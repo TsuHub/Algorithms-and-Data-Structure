@@ -1,4 +1,4 @@
-#include <stdbool.h>
+//#include <stdbool.h>
 
 #define VERTICE_INVALIDO NULL
 #define AN -1
@@ -25,7 +25,7 @@ typedef struct str_aresta {
 } Aresta;
 
 typedef struct {
-	Aresta * listaAdj;
+	Aresta ** listaAdj;
 	int numVertices;
 	int numArestas;
 } Grafo;
