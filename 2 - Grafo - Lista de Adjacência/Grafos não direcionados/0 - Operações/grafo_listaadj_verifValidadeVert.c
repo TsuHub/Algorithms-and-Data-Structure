@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool verificaValidadeVertice(Grafo* grafo, int vertice)
+bool verificaValidadeVertice(Grafo* grafo, int v)
 {
-	if (vertice < 0 || vertice >= grafo->numVertices){
+	if (v < 0 || v >= grafo->numVertices){
 		fprintf(stderr, "ERRO: O índice do vértice deve estar no intervalo de 0 a %d.\n", grafo->numVertices);
 		return false;
 	}

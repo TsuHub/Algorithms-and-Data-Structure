@@ -7,6 +7,9 @@
 int main()
 {
 	Grafo grafo;
+	
+	printf("A estrutura aresta ocupa %dB na memória\n", sizeof(Aresta*));
+	
 	int numVertices;
 	
 	//inicializaGrafo(&grafo, 5);
@@ -16,7 +19,7 @@ int main()
 		scanf("%d", &numVertices);
 	} while(!inicializaGrafo(&grafo, numVertices));
 	
-	insereAresta(&grafo, 1, 3);
+	insereAresta(&grafo, 10, 1, 3);
 		
 	return 0;
 }
