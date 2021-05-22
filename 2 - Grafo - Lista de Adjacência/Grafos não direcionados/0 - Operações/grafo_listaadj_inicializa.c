@@ -34,7 +34,7 @@
 bool inicializaGrafo(Grafo* grafo, int nv)
 {
 	if (nv <= 0){
-		fprintf(stderr, "ERRO: A quantidade de vértices deve ser maior que 0");
+		fprintf(stderr, "g_l_i:     ERRO: A quantidade de vértices deve ser maior que 0");
 		return false;
 	}
 	
@@ -50,10 +50,10 @@ bool inicializaGrafo(Grafo* grafo, int nv)
 	//if (!(grafo->listaAdj = (Aresta**) calloc(nv, sizeof(Aresta*)))){
     // Atualizado o ponteiro do tipo aresta como sendo Apontador.
 	if (!(grafo->listaAdj = (Apontador*) calloc(nv, sizeof(Apontador)))){
-		fprintf(stderr, "ERRO: Falha na alocação de memória na função inicializaGrafo\n");
+		fprintf(stderr, "g_l_i:     ERRO: Falha na alocação de memória na função inicializaGrafo\n");
 		return false;
 	}
-	printf("\nGrafo inicializado com sucesso.\n");
+	printf("\ng_l_i:     Grafo inicializado com sucesso.\n");
 	
 	return true;
 }
