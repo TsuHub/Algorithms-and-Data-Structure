@@ -41,7 +41,7 @@ void atribuiAresta(Grafo* grafo, Peso peso, int vAlvo, int vDest)
 	Apontador p;
 	
 	if(!(p = (Apontador) calloc(1, sizeof(Aresta)))){		
-	   	fprintf(stderr, "ERRO: Falha na alocação de memória na função insere Aresta\n");
+	   	fprintf(stderr, "g_l_i:     ERRO: Falha na alocação de memória na função insere Aresta\n");
    	}
 	
 	p->vdest = vDest;
@@ -76,7 +76,7 @@ bool insereAresta(Grafo* grafo, Peso peso, int vAlvo, int vDest)
     atribuiAresta(grafo, peso, vDest, vAlvo);
     
     //printf("\n\nAAAAAAAAA %d\n\n",peso);
-	printf("A aresta de peso %d foi inserida entre os nós %d e %d.\n", peso, vAlvo, vDest);
+	printf("g_l_i:     A aresta de peso %d foi inserida entre os nós %d e %d.\n", peso, vAlvo, vDest);
    	
    	grafo->numArestas++;
 	

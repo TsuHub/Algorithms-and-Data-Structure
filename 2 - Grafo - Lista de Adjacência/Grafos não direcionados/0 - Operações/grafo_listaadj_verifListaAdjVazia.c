@@ -15,10 +15,10 @@ bool listaAdjVazia(Grafo* grafo, int v)
 	
 	///*
 	if (grafo->listaAdj[v] == NULL){
-		printf("A lista de adjacência do vértice %d está vazia.\n", v);
+		printf("g_l_vLAV:  A lista de adjacência do vértice %d está vazia.\n", v);
 		return true;
 	}
-	printf("A lista de adjacência do vértice %d não está vazia.\n\n", v);
+	printf("g_l_vLAV:  A lista de adjacência do vértice %d não está vazia.\n\n", v);
 	return false;
 	//*/
 }
