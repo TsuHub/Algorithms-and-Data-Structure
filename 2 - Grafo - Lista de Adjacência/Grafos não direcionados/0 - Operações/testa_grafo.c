@@ -6,7 +6,8 @@
 #include "grafo_listaadj_proxListAdj.c"
 #include "grafo_listaadj_existeAresta.c"
 #include "grafo_listaadj_obtemPesoAresta.c"
-#include "grafo_listaadj_remove.c"
+#include "grafo_listaadj_removeArestaObtendoPeso.c"
+#include "grafo_listaadj_liberaGrafo.c"
 
 int main()
 {
@@ -57,15 +58,24 @@ int main()
 	Aresta* aresta;
 	aresta = grafo.listaAdj[1];
 	
+	
 	proxListaAdj(&grafo, 1, aresta);
+	
 	
 	existeAresta(&grafo, 1, 2);
 	existeAresta(&grafo, 1, 3);
 	
+	
 	Peso peso = obtemPesoAresta(&grafo, 1, 3);
 	printf("t_g:       O peso da aresta entre os nós %d e %d é de: %d\n", 1, 3, peso);
 
-	removeArestaObtendoPeso(&grafo, 10, 1, 3);
+	
+	Peso p1;
+	p1 = grafo.listaAdj[1]->peso;
+	removeArestaObtendoPeso(&grafo, &p1, 1, 3);
+	
+	
+	liberaGrafo(&grafo);
 	
 	
 	//==========================================================================
