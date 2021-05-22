@@ -4,6 +4,7 @@
 #include "grafo_listaadj_inicializa.c"
 #include "grafo_listaadj_insere.c"
 #include "grafo_listaadj_proxListAdj.c"
+#include "grafo_listaadj_existeAresta.c"
 
 int main()
 {
@@ -48,14 +49,21 @@ int main()
 	
 	// Como criar uma aresta para colocar como argumento na função
 	// proxListaAdj()?
-	Aresta aresta;
-	//aresta->
 	
-	printf("%p", proxListaAdj(&grafo, 1, aresta));
 	
+	printf("\n\n");
+	Aresta* aresta;
+	aresta = grafo.listaAdj[1];
+	
+	proxListaAdj(&grafo, 1, aresta);
+	
+	existeAresta(&grafo, 1, 2);
+	existeAresta(&grafo, 1, 3);
+
 	//==========================================================================
 	//==========================================================================
 	
+	printf("\n\n");
 	
 	return 0;
 }
