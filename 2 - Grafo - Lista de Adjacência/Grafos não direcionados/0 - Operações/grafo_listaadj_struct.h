@@ -27,6 +27,7 @@ typedef struct str_aresta {
 typedef Aresta* Apontador;
 
 typedef struct {
+	//Aresta** listaAdj;
 	Apontador* listaAdj;
 	int numVertices;
 	int numArestas;
