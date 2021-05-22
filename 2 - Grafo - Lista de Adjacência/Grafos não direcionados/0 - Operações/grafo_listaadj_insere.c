@@ -3,6 +3,39 @@
 #include "grafo_listaadj_verifValidadeVert.c"
 #include "grafo_listaadj_verifListaAdjVazia.c"
 
+/*
+	va é o nó alvo que receberá o adjacente.
+	vd é o nó de destino.
+	
+		
+  Lista de	
+ adjacência
+(é um vetor*)
+ listaAdj[v]	   Próx da
+	 |			   lista de
+   	 |		      adjacência
+   	 |	     (grafo->listaAdj[va])
+     |				  |
+	 |		   -------
+	 |		  |		  
+	 v	 	  v	 	  
+	 	 	 	 	  
+(v)  1   ---> 4 -> 3 -> 5
+	 2   ---> 1
+	 3   ---> 4
+	 4   ---> 5 -> 1
+	 
+  	 	  ^   
+	      |
+       Aresta*
+	 (Apontador)
+	 
+	 
+	 
+	( grafo->listaAdj[v]->prox )  ==  ( grafo->listaAdj[v1] ) 
+	 
+*/
+
 bool insereAresta(Grafo* grafo, Peso peso, int v1, int v2)
 {
 	if (!(verificaValidadeVertice(grafo, v1) && verificaValidadeVertice(grafo, v2))){
@@ -27,6 +60,8 @@ bool insereAresta(Grafo* grafo, Peso peso, int v1, int v2)
    	grafo->listaAdj[v1] = p;			// forma 2
    	grafo->numArestas++;				// forma 2
 	
+	printf("A aresta de peso %d foi inserida entre os nós %d e %d.\n", peso, v1, v2);
+	
 	   
     /*
 	   Este é o uso da forma 1, onde faço uso direto da estruturas de
@@ -39,7 +74,6 @@ bool insereAresta(Grafo* grafo, Peso peso, int v1, int v2)
 	//grafo->listaAdj[v1]->prox = grafo->listaAdj[v1];		// forma 1
 	//grafo->numArestas++;									// forma 1
 
-	printf("A aresta de peso %d foi inserida entre os nós %d e %d.\n", peso, v1, v2);
 	
 	return true;
 }

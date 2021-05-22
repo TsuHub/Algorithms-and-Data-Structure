@@ -11,9 +11,9 @@ bool listaAdjVazia(Grafo* grafo, int v)
 {
 	if (!(verificaValidadeVertice(grafo, v)))
 		return false;
-	return (grafo->listaAdj[v] == NULL);
+	//return (grafo->listaAdj[v] == NULL);
 	
-	/*
+	///*
 	if (grafo->listaAdj[v] == NULL){
 		printf("A lista de adjacência do vértice %d está vazia.\n", v);
 		return true;
