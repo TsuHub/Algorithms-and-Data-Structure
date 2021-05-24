@@ -15,6 +15,6 @@ bool existeAresta(Grafo* grafo, int v1, int v2)
 		return false;
 	}
 	
-	printf("g_l_eA:    Existe uma aresta de peso %d entre os nós %d e %d.\n", p->peso, v1, v2);
+	printf("g_l_eA:    Existe uma aresta de peso %.1f entre os nós %d e %d.\n", p->peso, v1, v2);
 	return true;
 }
