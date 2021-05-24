@@ -8,12 +8,14 @@
 #include "grafo_listaadj_obtemPesoAresta.c"
 #include "grafo_listaadj_removeArestaObtendoPeso.c"
 #include "grafo_listaadj_liberaGrafo.c"
+#include "grafo_listaadj_leGrafo.c"
+#include "grafo_listaadj_imprime.c"
 
 int main()
 {
 	Grafo grafo;
 	
-	printf("\n\nt_g:       A estrutura aresta ocupa %d bytes na memória\n\n\n\n", sizeof(Aresta*));
+	printf("\n\nt_g:       A estrutura aresta ocupa %d bytes na memória\n\n\n", sizeof(Aresta*));
 	
 	int numVertices;
 	
@@ -34,6 +36,7 @@ int main()
  		estão funcionando corretamente.
  	*/
  	
+ 	///*
  	listaAdjVazia(&grafo, 1);
 	//if (listaAdjVazia(&grafo, 1)){
 	//	printf("A lista de adjacência do nó 1 está vazia.\n");
@@ -58,13 +61,19 @@ int main()
 	Aresta* aresta;
 	aresta = grafo.listaAdj[1];
 	
-	
+		
 	proxListaAdj(&grafo, 1, aresta);
 	
 	
 	existeAresta(&grafo, 1, 2);
 	existeAresta(&grafo, 1, 3);
 	
+	
+	insereAresta(&grafo, 5, 1, 2);
+	
+	
+	// TESTE: IMPRESSÃO 1
+	imprimeGrafo(&grafo);	
 	
 	Peso peso = obtemPesoAresta(&grafo, 1, 3);
 	printf("t_g:       O peso da aresta entre os nós %d e %d é de: %d\n", 1, 3, peso);
@@ -76,12 +85,16 @@ int main()
 	
 	
 	liberaGrafo(&grafo);
-	
+	//*/
 	
 	//==========================================================================
 	//==========================================================================
+	
+	//leGrafo("entrada.txt", &grafo);
 	
 	printf("\n\n");
+	
+	//imprimeGrafo(&grafo);
 	
 	return 0;
 }

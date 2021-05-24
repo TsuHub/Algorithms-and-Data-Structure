@@ -3,7 +3,9 @@
 #define VERTICE_INVALIDO NULL
 #define AN -1
 
-typedef int Peso;
+//typedef int Peso;
+
+typedef float Peso;
 
 /*
 	Uma estrutura do tipo "Aresta" é mais interessante para este

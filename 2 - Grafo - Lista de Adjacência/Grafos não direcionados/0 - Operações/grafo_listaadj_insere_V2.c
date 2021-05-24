@@ -1,3 +1,8 @@
+#include <stdlib.h>
+#include <stdbool.h>
+#include "grafo_listaadj_verifValidadeVert.c"
+#include "grafo_listaadj_verifListaAdjVazia.c"
+
 /*
 	Existe a versão 1 (V1) do insere "grafo_listaadj_insere_V1.c"
 	que é a versão da professora.
@@ -7,11 +12,6 @@
 	algum bug, preciso testar mais vezes para saber. 
 */
 
-#include <stdlib.h>
-#include <stdbool.h>
-#include "grafo_listaadj_verifValidadeVert.c"
-#include "grafo_listaadj_verifListaAdjVazia.c"
-
 /*
 	vAlvo é o vértice alvo que receberá o adjacente.
 	vDest é o vértice de destino.
@@ -19,7 +19,7 @@
 		
 	  Lista de	
 	 adjacência
-	 (um vetor)
+	(é um vetor*)
 grafo->listaAdj[vAlvo]
 		  |
 		  |
@@ -29,13 +29,11 @@ grafo->listaAdj[vAlvo]
 		  |		  		 | 
 		  v				 v	 	  
 	 	 	 	 	  
-	 	 	 	 	  
 		  1   	--->	 4 -> 3 -> 5
 		  2   	--->	 1
 		  3   	--->	 4
 		  4   	--->	 5 -> 1
 	 
-	 	 
   	 	  ^   
 	      |
        Aresta*
@@ -47,39 +45,44 @@ grafo->listaAdj[vAlvo]
 	 
 */
 
-// Função para grafos não dirigidos
 void atribuiAresta(Grafo* grafo, Peso peso, int vAlvo, int vDest)
 {
-	// Criando a aresta que será inserida entre
-	// os vértices vAlvo e vDest
 	Apontador p;
-	Apontador pAux;
 	
-	if(!(p = (Apontador) calloc(1, sizeof(Aresta))))
+	if(!(p = (Apontador) calloc(1, sizeof(Aresta)))){		
 	   	fprintf(stderr, "g_l_i:     ERRO: Falha na alocação de memória na função insere Aresta\n");
+   	}
 
-	// Inicizalizando a aresta que será inserida entre os vértices
 	p->vdest = vDest;
    	p->peso  = peso;
-   	
-   	///*
-   	// Se a lista for vazia, não há uma próxima aresta
-   	if (!listaAdjVazia(grafo, vAlvo)){
-		pAux = grafo->listaAdj[vAlvo];
-		p->prox = pAux;
-	}
-	
-	else p->prox = NULL;					//	 p	 ---> NULL
-	//*/
-
-	grafo->listaAdj[vAlvo] = p;				// | 0 | ---> NULL
+   	p->prox  = grafo->listaAdj[vAlvo];	//	 p	 ---> | 0 |
+	grafo->listaAdj[vAlvo] = p;			// | 0 | ---> | 0 |
+	pAux->vdest = grafo->listaAdj[vAlvo];	   
 }
+
+/*
+	p	---> 4
+
+	1   ---> 3 -> 5
+	
+	1   ---> 3 -> 5
+*/
 
 bool insereAresta(Grafo* grafo, Peso peso, int vAlvo, int vDest)
 {
 	if (!(verificaValidadeVertice(grafo, vAlvo) && verificaValidadeVertice(grafo, vDest))){
 		return false;
 	}
+		
+	//if(!(grafo->listaAdj = (Aresta**)   calloc(1, sizeof(Aresta*)))){	// forma 1
+	//if(!(grafo->listaAdj = (Apontador*) calloc(1, sizeof(Aresta)))){	// forma 1
+	
+	/*
+	if(!(p = (Apontador) calloc(1, sizeof(Aresta)))){		
+	   	fprintf(stderr, "ERRO: Falha na alocação de memória na função insere Aresta\n");
+	   	return false;
+   	}
+   	*/
    	
    	/*
 	   Como estamos tratando de um grafo não direcionado
@@ -91,9 +94,10 @@ bool insereAresta(Grafo* grafo, Peso peso, int vAlvo, int vDest)
     atribuiAresta(grafo, peso, vDest, vAlvo);
     
     //printf("\n\nAAAAAAAAA %d\n\n",peso);
-	printf("g_l_i:     A aresta de peso %.1f foi inserida entre os nós %d e %d.\n", peso, vAlvo, vDest);
+	printf("g_l_i:     A aresta de peso %d foi inserida entre os nós %d e %d.\n", peso, vAlvo, vDest);
    	
    	grafo->numArestas++;
+	
 	
 	return true;
 }

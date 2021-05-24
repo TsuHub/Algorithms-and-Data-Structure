@@ -9,7 +9,7 @@
 	caso contrário retorna false (e "peso" é inalterado).
 */
 
-bool removeArestaObtendoPeso(Grafo* grafo, Peso* peso, int v1, int v2)
+bool removeArestaObtendoPeso(Grafo* grafo, Peso peso, int v1, int v2)
 {
 	Apontador q, ant;
 
@@ -27,12 +27,15 @@ bool removeArestaObtendoPeso(Grafo* grafo, Peso* peso, int v1, int v2)
 	if (q != NULL){
 		if (grafo->listaAdj[v1] == q)
 			grafo->listaAdj[v1] = q->prox;
-		else ant->prox = q->prox;
-		*peso = q->peso;
+		
+		else
+			ant->prox = q->prox;
+		
+		peso = q->peso;
 		q->prox = NULL;
 		free(q);
 		q = NULL;
-		printf("g_l_rAO:   O peso '%x' foi removido entre os nós %d e %d.\n", *peso, v1, v2);
+		printf("g_l_rAO:   O peso '%.1f' foi removido entre os nós %d e %d.\n", peso, v1, v2);
 		//printf("g_l_rAO:   O peso '%n' foi removido entre os nós %d e %d.\n", *(&peso), v1, v2);
 		
 		return true;

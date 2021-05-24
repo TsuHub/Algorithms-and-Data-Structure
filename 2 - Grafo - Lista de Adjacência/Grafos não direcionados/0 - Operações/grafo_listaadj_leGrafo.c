@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /*
 LeGrafo(nomearq, Grafo)
 Le o arquivo nomearq e armazena na estrutura Grafo
@@ -33,16 +35,18 @@ int leGrafo(char* nomearq, Grafo* grafo)
 {
 	FILE *fp;
 	int nvertices, narestas;
-	int v1, v2;
-	Peso peso;
-	int idar;
+	//int v1, v2;
+	//Peso peso;
+	//int idar;
 
 	fp = fopen(nomearq, "r");
 	if (fp == NULL)
 		return 0;
 
-	if (fscanf(fp, "%d %d", &vertices, &narestas) != 2)
+	if (fscanf(fp, "%d %d", &nvertices, &narestas) != 2)
 		return 0;
 
 	inicializaGrafo(grafo, nvertices);
+	
+	return 0;
 }

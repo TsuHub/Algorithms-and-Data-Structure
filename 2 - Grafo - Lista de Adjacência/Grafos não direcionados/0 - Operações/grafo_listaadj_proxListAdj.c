@@ -51,7 +51,7 @@ Aresta* proxListaAdj(Grafo* grafo, int v, Aresta* atual)
 		return VERTICE_INVALIDO;
 	}
 	
-	printf("g_l_pLA:   O próximo adjacente ao vértice %d é o vértice %d, de aresta com peso %d.\n", v, grafo->listaAdj[v]->vdest, grafo->listaAdj[v]->peso);
+	printf("g_l_pLA:   O próximo adjacente ao vértice %d é o vértice %d, de aresta com peso %.1f.\n", v, grafo->listaAdj[v]->vdest, grafo->listaAdj[v]->peso);
 	return(atual->prox);
 }
 
