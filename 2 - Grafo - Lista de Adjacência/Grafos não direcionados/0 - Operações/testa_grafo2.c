@@ -8,7 +8,7 @@
 #include "grafo_listaadj_obtemPesoAresta.c"
 #include "grafo_listaadj_removeArestaObtendoPeso.c"
 #include "grafo_listaadj_liberaGrafo.c"
-#include "grafo_listaadj_leGrafo.c"
+#include "leGrafo.c"
 #include "grafo_listaadj_imprime.c"
 
 int main()
@@ -38,9 +38,12 @@ int main()
 	insereAresta(&grafo, 3, 1, 3);
 	imprimeGrafo(&grafo);
 	
+	insereAresta(&grafo, 2.5, 1, 4);
+	imprimeGrafo(&grafo);
 	
-	//insereAresta(&grafo, 3, 1, 3);
-	//imprimeGrafo(&grafo);
+	removeArestaObtendoPeso(&grafo, 2.5, 1, 4);
+	removeArestaObtendoPeso(&grafo, 2.5, 4, 1);
+	imprimeGrafo(&grafo);
 	
 	
 	return 0;
