@@ -27,10 +27,10 @@ TsuHub
     <th>Function</th><th>Adjacency Matrix</th><th>Adjacency List</th>
   </tr>
   <tr>
-    <td>inicializaGrafo</td><td>O(v^2)</td><td>O(v)</td>
+    <td>inicializaGrafo</td><td>O(v²)</td><td>O(v)</td>
   </tr>
   <tr>
-    <td>imprimeGrafo</td><td>O(v^2)</td><td>O(v + a)</td>
+    <td>imprimeGrafo</td><td>O(v²)</td><td>O(v + a)</td>
   </tr>
   <tr>
     <td>insereAresta</td><td>O(1)</td><td>O(1)</td>
