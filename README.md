@@ -51,6 +51,9 @@ TsuHub
     <td>liberaGrafo</td><td>O(1)</td><td>O(v + a)</td>
   </tr>
   <tr>
-    <td>buscaProfundidade</td><td>O(v + a)</td><td>O(v + a)</td>
-  </tr>  
+    <td>buscaEmProfundidade</td><td>O(v + a)</td><td>O(v + a)</td>
+  </tr>
+  <tr>
+    <td>buscaEmLargura</td><td>O(v + a)</td><td>O(v + a)</td>
+  </tr>
 </table>
