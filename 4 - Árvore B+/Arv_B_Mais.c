@@ -10,7 +10,7 @@
 	4. nº max de filhos por nó = [2t]
 */
 #include <stdbool.h>
-#define t 2
+#define t 3
 typedef int TipoChave;
 
 typedef struct str_no {
@@ -22,4 +22,4 @@ typedef struct str_no {
 
 typedef struct {
     NO* raiz;
-} ArvB;
+} ArvBMais;
